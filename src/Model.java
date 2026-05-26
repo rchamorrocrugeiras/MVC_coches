@@ -1,15 +1,15 @@
-import java.util.ArrayList;
-
 /**
- * Clase encargada de manejar los datos
+ * Clase encargada de manejar los datos del sistema.
+ * Gestiona el almacenamiento y modificación de coches.
  */
 public class Model {
+
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
-     * Crea un coche y lo mete en el parking
-     * @param modelo del coche
-     * @param matricula identificador unico
+     * Crea un coche y lo añade al parking.
+     * @param modelo modelo del coche
+     * @param matricula identificador único del coche
      * @return el coche creado
      */
     public Coche crearCoche(String modelo, String matricula){
@@ -19,49 +19,51 @@ public class Model {
     }
 
     /**
-     * Busca coche segun matricula
-     * @param matricula a buscar
-     * @return chche o null si no existe
+     * Busca un coche por matrícula.
+     * @param matricula matrícula a buscar
+     * @return coche encontrado o null si no existe
      */
     public Coche getCoche(String matricula){
         Coche aux = null;
-        // recorre el array buscando por matricula
+
         for (Coche e: parking) {
             if (e.matricula.equals(matricula)) {
                 aux = e;
             }
         }
+
         return aux;
     }
 
     /**
-     * Cambia la velocidad de un coche
-     * @param matricula
+     * Cambia la velocidad de un coche.
+     * @param matricula matrícula del coche
      * @param v nueva velocidad
      * @return velocidad modificada
      */
     public int cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
+
         getCoche(matricula).velocidad = v;
+
         System.out.println(" LOG esta haciendose");
-        // retorna la nueva velocidad
+
         return getCoche(matricula).velocidad;
     }
 
     /**
-     * Ddevuelve la velocidad segun la matricula
-     * @param matricula
-     * @return
+     * Devuelve la velocidad según la matrícula.
+     * @param matricula matrícula del coche
+     * @return velocidad actual
      */
     public int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
 
     /**
-     * Hace avanzar el coche y consume gasolina
-     * @param matricula
-     * @param metros
-     * @return metros recorridos
+     * Hace avanzar el coche y consume gasolina.
+     * @param matricula matrícula del coche
+     * @param metros metros a avanzar
+     * @return metros recorridos totales
      */
     public int avanzar(String matricula, int metros) {
 
@@ -69,7 +71,7 @@ public class Model {
 
         c.metrosRecorridos += metros;
 
-        // consumo simple
+        // consumo simple de gasolina
         c.gasolina -= metros / 10;
 
         if (c.gasolina < 0) {
@@ -80,10 +82,10 @@ public class Model {
     }
 
     /**
-     * Carga gasolina al coche
-     * @param matricula
-     * @param litros
-     * @return gasolina total
+     * Carga gasolina al coche.
+     * @param matricula matrícula del coche
+     * @param litros litros a añadir
+     * @return gasolina total después de la carga
      */
     public int cargarGasolina(String matricula, int litros) {
 
@@ -93,9 +95,9 @@ public class Model {
     }
 
     /**
-     * Devuelve gasolina actual
-     * @param matricula
-     * @return gasolina
+     * Devuelve la gasolina actual del coche.
+     * @param matricula matrícula del coche
+     * @return gasolina disponible
      */
     public int getGasolina(String matricula) {
 
@@ -103,10 +105,9 @@ public class Model {
     }
 
     /**
-     * Devuelve los metros recorridos
-     * de un coche
+     * Devuelve los metros recorridos por un coche.
      * @param matricula matrícula del coche
-     * @return metros recorridos
+     * @return metros recorridos totales
      */
     public int getMetros(String matricula) {
         return getCoche(matricula).metrosRecorridos;

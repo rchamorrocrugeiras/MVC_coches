@@ -1,7 +1,7 @@
 /**
  * Clase que representa un coche
- * Guarda modelo, matrícula, velocidad
- * y metros recorridos
+ * Guarda modelo, matrícula, velocidad,
+ * metros recorridos y gasolina
  */
 
 public class Coche {
@@ -13,6 +13,7 @@ public class Coche {
 
     /**
      * Constructor del coche
+     * Inicializa velocidad, metros recorridos y gasolina
      * @param modelo modelo del coche
      * @param matricula matrícula única
      */
