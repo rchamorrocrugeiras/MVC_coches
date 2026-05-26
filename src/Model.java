@@ -59,9 +59,10 @@ public class Model {
 
     /**
      * Hace avanzar el coche
-     * @param matricula coche a mover
-     * @param metros metros avanzados
-     * @return total recorrido
+     * sumando metros recorridos
+     * @param matricula matrícula del coche
+     * @param metros metros a avanzar
+     * @return metros recorridos totales
      */
     public int avanzar(String matricula, int metros) {
         getCoche(matricula).metrosRecorridos += metros;
@@ -71,6 +72,9 @@ public class Model {
 
     /**
      * Devuelve los metros recorridos
+     * de un coche
+     * @param matricula matrícula del coche
+     * @return metros recorridos
      */
     public int getMetros(String matricula) {
         return getCoche(matricula).metrosRecorridos;

@@ -1,5 +1,9 @@
 import java.lang.module.ModuleDescriptor;
 
+/**
+ * Clase encargada de conectar
+ * la vista con el modelo
+ */
 public class Controller {
     static View miView = new View();
     Model miModel = new Model();
@@ -32,6 +36,13 @@ public class Controller {
          } ; **/
     }
 
+    /**
+     * Añade un coche al sistema
+     * @param modelo modelo del coche
+     * @param matricula matrícula del coche
+     * @return true si se añade correctamente
+     */
+
     public boolean añadirCoche(String modelo, String matricula){
         Coche creado =miModel.crearCoche(modelo,matricula);
         if (creado == miModel.getCoche(matricula)) {
@@ -39,11 +50,26 @@ public class Controller {
         else {return false;}
     }
 
+    /**
+     * Cambia la velocidad de un coche
+     * @param matricula matrícula del coche
+     * @param velocidad nueva velocidad
+     * @return true si se cambia correctamente
+     */
+
     public boolean newVelocidad(String matricula, int velocidad){
         int nuevaVelocidad = miModel.cambiarVelocidad(matricula, velocidad);
         boolean hecho = miView.muestraVelocidad(matricula, miModel.getVelocidad(matricula));
         return hecho;
     }
+
+    /**
+     * Hace avanzar un coche
+     * y suma los metros recorridos
+     * @param matricula matrícula del coche
+     * @param metros metros avanzados
+     * @return true si avanza correctamente
+     */
 
     public boolean avanzarCoche(String matricula, int metros){
 

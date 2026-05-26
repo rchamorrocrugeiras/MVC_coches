@@ -1,10 +1,15 @@
 import java.util.Scanner;
 
 /**
- * Clase encargada de la interacción con el usuario
+ * Clase encargada de la
+ * interacción con el usuario
  */
 public class View {
 
+    /**
+     * Muestra el menú principal
+     * de la aplicación
+     */
 
     public void menu() {
         Controller c = new Controller();
@@ -64,12 +69,25 @@ public class View {
         } while (opcion != 4);
     }
 
-
+    /**
+     * Muestra la velocidad
+     * de un coche
+     * @param matricula matrícula del coche
+     * @param v velocidad actual
+     * @return true si se muestra correctamente
+     */
     public boolean muestraVelocidad(String matricula, Integer v) {
         System.out.println(matricula + ": " + v + "km/h");
         return true;
     }
 
+    /**
+     * Muestra los metros recorridos
+     * por un coche
+     * @param matricula matrícula del coche
+     * @param metros metros recorridos
+     * @return true si se muestra correctamente
+     */
     public boolean mostrarMetros(String matricula, Integer metros){
 
         System.out.println(matricula + ": " + metros + " metros recorridos");
