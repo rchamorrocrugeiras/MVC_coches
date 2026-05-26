@@ -52,7 +52,6 @@ public class View {
                 }
 
                 case 3 -> {
-
                     System.out.println("Matricula: ");
 
                     String matricula = new Scanner(System.in).next();
@@ -74,7 +73,6 @@ public class View {
                 }
 
                 case 4 -> {
-
                     System.out.println("Matricula: ");
 
                     String matricula = new Scanner(System.in).next();
@@ -93,6 +91,10 @@ public class View {
 
                         System.out.println("Algo ha fallado");
                     }
+                }
+
+                case 5 -> {
+                    System.out.println("Chao hasta luego....");
                 }
             }
         } while (opcion != 5);
