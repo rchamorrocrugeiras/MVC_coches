@@ -44,4 +44,13 @@ public class Controller {
         boolean hecho = miView.muestraVelocidad(matricula, miModel.getVelocidad(matricula));
         return hecho;
     }
+
+    public boolean avanzarCoche(String matricula, int metros){
+
+        int total = miModel.avanzar(matricula, metros);
+
+        boolean hecho = miView.mostrarMetros(matricula, total);
+
+        return hecho;
+    }
 }
