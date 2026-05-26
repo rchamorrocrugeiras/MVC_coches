@@ -64,18 +64,37 @@ public class Controller {
     }
 
     /**
-     * Hace avanzar un coche
-     * y suma los metros recorridos
-     * @param matricula matrícula del coche
-     * @param metros metros avanzados
-     * @return true si avanza correctamente
+     * Hace avanzar el coche
+     * @param matricula
+     * @param metros
+     * @return true si funciona
      */
-
     public boolean avanzarCoche(String matricula, int metros){
 
         int total = miModel.avanzar(matricula, metros);
 
-        boolean hecho = miView.mostrarMetros(matricula, total);
+        boolean hecho = miView.mostrarMetros(
+                matricula,
+                total
+        );
+
+        return hecho;
+    }
+
+    /**
+     * Carga gasolina al coche
+     * @param matricula
+     * @param litros
+     * @return true si funciona
+     */
+    public boolean cargarGasolina(String matricula, int litros){
+
+        int total = miModel.cargarGasolina(matricula, litros);
+
+        boolean hecho = miView.mostrarGasolina(
+                matricula,
+                total
+        );
 
         return hecho;
     }

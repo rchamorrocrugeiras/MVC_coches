@@ -9,6 +9,7 @@ public class Coche {
     String modelo;
     Integer velocidad;
     Integer metrosRecorridos;
+    Integer gasolina;
 
     /**
      * Constructor del coche
@@ -20,5 +21,6 @@ public class Coche {
         this.matricula = matricula;
         this.velocidad = 0;
         this.metrosRecorridos = 0;
+        this.gasolina = 100;
     }
 }

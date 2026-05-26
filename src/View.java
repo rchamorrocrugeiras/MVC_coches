@@ -19,7 +19,8 @@ public class View {
             System.out.println("1. Engadir Coche");
             System.out.println("2. Cambiar velocidad");
             System.out.println("3. Avanzar");
-            System.out.println("4. Salir");
+            System.out.println("4. Cargar gasolina");
+            System.out.println("5. Salir");
             System.out.print("Selecciona unha opción: ");
 
             opcion = new Scanner(System.in).nextInt();
@@ -51,22 +52,50 @@ public class View {
                 }
 
                 case 3 -> {
+
                     System.out.println("Matricula: ");
+
                     String matricula = new Scanner(System.in).next();
 
                     System.out.println("Metros a avanzar: ");
+
                     int metros = new Scanner(System.in).nextInt();
 
                     boolean a = c.avanzarCoche(matricula, metros);
 
                     if (a == true) {
+
                         System.out.println("El coche avanzó correctamente");
+
                     } else {
+
+                        System.out.println("Algo ha fallado");
+                    }
+                }
+
+                case 4 -> {
+
+                    System.out.println("Matricula: ");
+
+                    String matricula = new Scanner(System.in).next();
+
+                    System.out.println("Litros a cargar: ");
+
+                    int litros = new Scanner(System.in).nextInt();
+
+                    boolean a = c.cargarGasolina(matricula, litros);
+
+                    if (a == true) {
+
+                        System.out.println("Gasolina cargada correctamente");
+
+                    } else {
+
                         System.out.println("Algo ha fallado");
                     }
                 }
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 
     /**
@@ -91,6 +120,20 @@ public class View {
     public boolean mostrarMetros(String matricula, Integer metros){
 
         System.out.println(matricula + ": " + metros + " metros recorridos");
+
+        return true;
+    }
+
+    /**
+     * Muestra la gasolina actual
+     * del coche
+     * @param matricula matrícula del coche
+     * @param gasolina gasolina disponible
+     * @return true si se muestra correctamente
+     */
+    public boolean mostrarGasolina(String matricula, Integer gasolina){
+
+        System.out.println(matricula + ": " + gasolina + " litros");
 
         return true;
     }
